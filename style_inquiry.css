@@ -10,12 +10,13 @@
     }
 
     body {
-        background: #18241c;
+        background: #182746;
         color: #212529;
         scroll-behavior: smooth;
     }
 
     /* #region TOP BANNER */
+
     .top-banner {
         position: fixed;
         top: 0;
@@ -80,7 +81,8 @@
     }
 
     .top-banner.scrolled {
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
     }
 
     .top-banner.scrolled .main-button {
@@ -93,7 +95,8 @@
     }
 
     .top-banner:hover {
-        background-color: rgba(255, 255, 255, 0.7);
+        background-color: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
     }
 
     .top-banner:hover .main-button {
@@ -112,46 +115,170 @@
 
     /* #endregion */
 
-    /* CONTACT FORM */
-    .contact h2 {
-        margin-bottom: 20px;
-        text-align: center;
+    /* #region INQUIRY BANNER IMAGE */
+    .inquiry-banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% auto;
+        /* Stretch to fill */
+        z-index: 999;
+        transform: scale(1.1);
+        /* Start slightly zoomed */
+        transition: transform 1s ease;
+        pointer-events: none;
     }
 
-    .contact form {
+    /* Text animation */
+    .inquiry-banner-text {
+        font-size: 3rem;
+        position: absolute;
+        top: 20%;
+        /* Moves the text down from the top of the screen */
+        left: 50%;
+        /* Starts at the horizontal center */
+        transform: translate(-50%, 20px);
+        /* Centers text horizontally & moves it down slightly for animation */
+        color: white;
+        transition: transform 1s ease;
+        z-index: 1001;
+        pointer-events: none;
+
+        /* Prevents full-width centering issues, but optional */
+    }
+
+
+    .inquiry-banner-text.show-text {
+        transform: translate(-50%, 0);
+        /* keep horizontal center, only animate Y */
+    }
+
+    /*#endregion*/
+
+
+    .blurred-box {
+        position: absolute;
+        backdrop-filter: blur(5px);
+        width: 100%;
+        height: 50px;
+        z-index: 1010;
+    }
+
+    /* #region INQUIRY FILL OUT FORM */
+    .inquiry-container {
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+        padding-top: 550px;
+        padding-bottom: 100px;
+        z-index: 1002;
+        position: relative
+    }
+
+    .inquiry_background {
+
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 210px;
+        left: 0;
+        background-repeat: repeat-x;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: white;
+    }
+
+    .subtext {
+        font-size: 14px;
+        margin-bottom: 40px;
+        color: #ffffff;
+    }
+
+    .inquiry-form {
+        text-align: left;
+    }
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .form-group {
+        flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 15px;
     }
 
-    .contact input,
-    .contact textarea {
-        padding: 15px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 1rem;
+    .form-group label {
+        font-size: 12px;
+        color: #ffffff;
+        margin-bottom: 8px;
     }
 
-    .contact button {
-        background: #c44635;
-        color: white;
+    .required {
+        color: red;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 10px;
         border: none;
-        padding: 15px;
-        border-radius: 8px;
+        border-bottom: 1px solid #f35463;
+        font-size: 14px;
+        outline: none;
+        resize: none;
+    }
+
+    textarea {
+        width: 100%;
+    }
+
+    .form-footer {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .submit-btn {
+        background-color: #f35463;
+        color: white;
+        padding: 12px 40px;
+        font-size: 14px;
+        border: none;
         cursor: pointer;
-        transition: background 0.3s ease;
+        border-radius: 3px;
+        transition: background 0.3s;
     }
 
-    .contact button:hover {
-        background: #5fe3cb;
+    .submit-btn:hover {
+        background-color: #e13d50;
     }
 
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        text-align: left;
+    }
 
+    /*#endregion*/
     /* FOOTER */
 
     footer {
+        background-color: #afafaf;
         text-align: center;
         padding: 30px;
         font-size: 0.9rem;
-        color: #666;
+        color: #353434;
     }

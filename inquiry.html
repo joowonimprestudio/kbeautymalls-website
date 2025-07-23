@@ -14,16 +14,56 @@
         <a href="index.html" class="main-button"> K-BEAUTY MALLS</a>
         <a href="inquiry.html" class="inquiry-button">INQUIRY</a>
     </div>
+    <div class="inquiry-banner" style="background-image: url('images/image_inquiry_banner.png');">
 
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+    </div>
+    <div class="inquiry-banner-text">Inquiry</div>
+
+    <div class="blurred-box" style="top: 400px;"></div>
+    <div class="blurred-box" style="top: 1120px;"></div>
+
+
+    <div class=inquiry_background style="background-image: url('images/image_kbeautymalls_background.png');"></div>
+
+    <div class="inquiry-container">
+        <p class="subtext">Please fill in the details. The person in charge will reply to you as soon as possible after
+            confirmation.</p>
+
+        <form class="inquiry-form" action="https://formsubmit.co/imjuwonyt@gmail.com" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">NAME <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>COUNTRY <span class="required">*</span></label>
+                    <input type="text" name="country" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>CONTACT NUMBER <span class="required">*</span></label>
+                    <input type="text" name="contact number" required>
+                </div>
+                <div class="form-group">
+                    <label>E-MAIL <span class="required">*</span></label>
+                    <input type="email" name="email" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>CONTENT</label>
+                <textarea name="content" rows="6" required></textarea>
+            </div>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="thankyou.html">
+            <div class="form-footer">
+                <button type="submit" class="submit-btn">SEND</button>
+            </div>
         </form>
-    </section>
+    </div>
+
 
     <footer>
         &copy; 2025 kbeautymalls. All rights reserved.

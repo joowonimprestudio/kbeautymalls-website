@@ -6,3 +6,23 @@ window.addEventListener('scroll', () => {
         banner.classList.remove('scrolled');
     }
 });
+
+
+window.addEventListener("DOMContentLoaded", () => {
+    const banner = document.querySelector(".inquiry-banner");
+    const text = document.querySelector(".inquiry-banner-text");
+
+    if (banner) {
+        // Animate zoom in
+        setTimeout(() => {
+            banner.style.transform = "scale(1)";
+        }, 50);
+    }
+
+    if (text) {
+        // Animate slide-up
+        setTimeout(() => {
+            text.classList.add("show-text");
+        }, 100);
+    }
+});
