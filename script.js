@@ -7,8 +7,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
-
 const backgrounds = document.querySelectorAll(".slide-bg");
 const texts = document.querySelectorAll(".slide-text");
 let current = 0;
@@ -36,7 +34,7 @@ setInterval(() => {
     // TEXT logic
     texts[prev].classList.remove("show-text");
     texts[current].classList.add("show-text");
-}, 5000);
+}, 3000);
 
 
 
